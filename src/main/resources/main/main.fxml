@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.Controller">
+    <center>
+        <TabPane fx:id="tabPane" prefHeight="400.0" prefWidth="740.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <Tab fx:id="loginTab" text="Login">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="263.0">
+                    <Label layoutX="185.0" layoutY="91.0" text="Login">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Label>
+                    <TextField fx:id="loginField" layoutX="289.0" layoutY="84.0">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </TextField>
+                    <Label layoutX="182.0" layoutY="140.0" text="Password">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Label>
+                    <PasswordField fx:id="passwordField" layoutX="289.0" layoutY="133.0" prefHeight="26.0" prefWidth="247.0">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </PasswordField>
+                    <Button defaultButton="true" layoutX="184.0" layoutY="185.0" mnemonicParsing="false" onAction="#start" prefHeight="26.0" prefWidth="352.0" text="Start">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Button>
+                </AnchorPane>
+            </Tab>
+            <Tab fx:id="adminTab" text="Admin operations">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <Label layoutX="25.0" layoutY="14.0" text="Spaces">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Label>
+                    <ListView fx:id="spacesListView" layoutX="14.0" layoutY="44.0" prefHeight="254.0" prefWidth="139.0" />
+                    <TextField fx:id="newCodeField" layoutX="104.0" layoutY="302.0" prefHeight="26.0" prefWidth="49.0" />
+                    <Button layoutX="14.0" layoutY="332.0" mnemonicParsing="false" onAction="#addNewCode" prefHeight="26.0" prefWidth="53.0" text="✔ Add">
+                  <font>
+                     <Font size="11.0" />
+                  </font></Button>
+                    <Button layoutX="76.0" layoutY="332.0" mnemonicParsing="false" onAction="#removeCode" prefHeight="26.0" prefWidth="77.0" text="✕ Delete" />
+                    <Label layoutX="172.0" layoutY="14.0" text="Users">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Label>
+                    <TableView fx:id="userTableForAdmin" layoutX="165.0" layoutY="44.0" prefHeight="219.0" prefWidth="362.0">
+                        <columns>
+                            <TableColumn fx:id="userIdColForAdmin" prefWidth="35.0" text="id" />
+                            <TableColumn fx:id="userNameColForAdmin" prefWidth="100.0" text="Name" />
+                            <TableColumn fx:id="userLoginColForAdmin" prefWidth="80.0" text="login" />
+                            <TableColumn fx:id="userLikesColForAdmin" prefWidth="35.0" text="♥" />
+                        </columns>
+                    </TableView>
+                    <TextField fx:id="nameFieldForNewUser" layoutX="274.0" layoutY="270.0" prefHeight="26.0" prefWidth="160.0" promptText="User name" />
+                    <TextField fx:id="loginFieldForNewUser" layoutX="274.0" layoutY="300.0" prefHeight="26.0" prefWidth="160.0" promptText="User login" />
+                    <PasswordField fx:id="passwordFieldForNewUser" layoutX="274.0" layoutY="330.0" prefHeight="26.0" prefWidth="160.0" promptText="User password" />
+                    <Button layoutX="442.0" layoutY="271.0" mnemonicParsing="false" onAction="#addUser" prefHeight="25.0" prefWidth="84.0" text="✔ Add" />
+                    <CheckBox fx:id="adminCheckBox" layoutX="442.0" layoutY="307.0" mnemonicParsing="false" text="Admin" />
+                    <Button layoutX="442.0" layoutY="331.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="25.0" prefWidth="84.0" text="✕ Delete" />
+               <Label layoutX="553.0" layoutY="14.0" text="Cars">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Label>
+               <ListView fx:id="carListView" layoutX="541.0" layoutY="44.0" prefHeight="221.0" prefWidth="179.0" />
+               <TextField fx:id="regNoField" layoutX="619.0" layoutY="270.0" prefHeight="25.0" prefWidth="101.0" promptText="Reg Number" />
+               <TextField fx:id="markField" layoutX="620.0" layoutY="300.0" prefHeight="25.0" prefWidth="100.0" promptText="Mark" />
+               <Button layoutX="540.0" layoutY="331.0" mnemonicParsing="false" onAction="#addNewCar" prefHeight="25.0" prefWidth="99.0" text="✔ Add" />
+               <Button layoutX="645.0" layoutY="331.0" mnemonicParsing="false" onAction="#deleteSelectedCar" prefHeight="26.0" prefWidth="76.0" text="✕ Delete" />
+               <Button layoutX="235.0" layoutY="14.0" mnemonicParsing="false" onAction="#clearUserSelection" prefHeight="26.0" prefWidth="110.0" text="Clear Selection" />
+               <Label layoutX="165.0" layoutY="274.0" text="New user name:" />
+               <Label layoutX="165.0" layoutY="307.0" text="New user login:" />
+               <Label layoutX="165.0" layoutY="335.0" text="New user password:" />
+               <Label layoutX="541.0" layoutY="274.0" text="New car no:" />
+               <Label layoutX="539.0" layoutY="304.0" text="New car mark:" />
+               <Label layoutX="14.0" layoutY="307.0" text="New space code" />
+                </AnchorPane>
+            </Tab>
+            <Tab fx:id="opTab" text="Parking operations">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <Label fx:id="userLabel" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="573.0" text="User:">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Label>
+               <Label layoutX="14.0" layoutY="44.0" text="Registered Cars">
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Label>
+               <ListView fx:id="registeredCarListView" layoutX="14.0" layoutY="71.0" prefHeight="289.0" prefWidth="130.0" />
+               <Button layoutX="154.0" layoutY="71.0" mnemonicParsing="false" onAction="#park" prefHeight="26.0" prefWidth="60.0" text="Park →" />
+               <Button layoutX="154.0" layoutY="289.0" mnemonicParsing="false" onAction="#leave" text="← Leave" />
+               <ListView fx:id="freeSpacesListView" layoutX="228.0" layoutY="70.0" prefHeight="177.0" prefWidth="128.0" />
+               <Label layoutX="228.0" layoutY="47.0" text="Free Spaces">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label layoutX="228.0" layoutY="258.0" text="My Spaces">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <ListView fx:id="mySpacesListView" layoutX="228.0" layoutY="281.0" prefHeight="78.0" prefWidth="122.0" />
+               <Label layoutX="378.0" layoutY="48.0" text="My Orders">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <TableView fx:id="myOrdersTableView" layoutX="369.0" layoutY="71.0" prefHeight="288.0" prefWidth="361.0">
+                 <columns>
+                   <TableColumn fx:id="carColumn" prefWidth="75.0" text="Car" />
+                   <TableColumn fx:id="spaceColumn" prefWidth="50.0" text="Space" />
+                   <TableColumn fx:id="startColumn" prefWidth="120.0" text="Start" />
+                   <TableColumn fx:id="endColumn" prefWidth="120.0" text="Finish" />
+                 </columns>
+               </TableView>
+                </AnchorPane>
+            </Tab>
+            <Tab fx:id="viewAllParkingTab" text="List of Parkings">
+                <BorderPane>
+                    <center>
+                        <TableView fx:id="allParkingTableView">
+                            <columns>
+                                <TableColumn fx:id="allParkingUser" prefWidth="250.0" text="User" />
+                                <TableColumn fx:id="allParkingCar" prefWidth="120.0" text="Car" />
+                                <TableColumn fx:id="allParkingSpace" text="Space" />
+                                <TableColumn fx:id="allParkingStart" prefWidth="130.0" text="Start" />
+                                <TableColumn fx:id="allParkingEnd" prefWidth="130.0" text="End" />
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>
